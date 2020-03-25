@@ -13,9 +13,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'InicioController@index');
+
 
 // Debes colocar la ruta, luego hacia donde voy a 
 // invocar y cual es el metodo que voy a llamar 
@@ -29,6 +28,9 @@ Route::get('/', function () {
 // php artisan optimize
 // la optimizacion de rutas solo funciona con las
 // rutas directas
+
+
+// **** Estos son otros ejemplos de rutas ****
 
 Route::get('/permiso', 'PermisoController@index');
 
