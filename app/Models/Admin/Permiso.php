@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Permiso extends Model
 {
-    //
+    // Tabla a la que va hacer alucion 'permiso'
     protected $table = "permiso";
 
 }

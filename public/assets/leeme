@@ -1,0 +1,12 @@
+Carpeta assets:
+Tiene 2 subcarpetas
+
+Carpeta lte:
+-----------
+Aqui coloco los componentes y plugins requeridos por el 
+tema seleccionado "AdminLTE"
+
+Carpeta css:
+-----------
+Aqui tambien va mi propio css "custom.css".
+

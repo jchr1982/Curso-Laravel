@@ -15,13 +15,23 @@ use App\Models\Admin\Permiso;
 use Illuminate\Support\Facades\Route;
 
 
+// Esta parte, es la nueva parte del "Menu", permite el cache
+Route::get('admin/menu', 'Admin\MenuController@index')->name('menu');
+Route::get('admin/menu/crear', 'Admin\MenuController@crear')->name('crear_menu');
+
+Route::post('admin/menu', 'Admin\MenuController@guardar')->name('guardar_menu');
+
+
+// ******************
+
+
 Route::get('/', 'InicioController@index');
 
-// Esta forma permite el cacheo
+
+// Esta forma permite el cacheo:
 // Route::get('admin/permiso', 'Admin\PermisoController@index')->name('permiso');
 
-
-// Otra forma de hacerlo mas facil, pero no permite el cacheo
+// Esta otra forma, es mas facil de hacerlo, pero no permite el cacheo
 Route::group(['prefix' => 'admin' , 'namespace' => 'Admin'], function () {
     
     Route::get('permiso', 'PermisoController@index')->name('permiso');
@@ -62,10 +72,9 @@ Route::get('/permiso4/{nombre?}', 'PermisoController@index');
 // Rutas con nombres
 Route::get('sistema/admin/usuario/jchr', 'PermisoController@index')->name('permiso5');
 
-// usando expresion regular para validar el contenido
+// usando expresiones regulares para validar el contenido
 // de la variable $nombre
 Route::get('permiso6/{nombre}', function ($nombre) {
-    //
     return $nombre;
 })->where('nombre', '[A-Za-z]+')->name('permiso');
 
