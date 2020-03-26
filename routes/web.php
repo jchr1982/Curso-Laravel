@@ -11,10 +11,26 @@
 |
 */
 
+use App\Models\Admin\Permiso;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', 'InicioController@index');
 
+// Esta forma permite el cacheo
+// Route::get('admin/permiso', 'Admin\PermisoController@index')->name('permiso');
+
+
+// Otra forma de hacerlo mas facil, pero no permite el cacheo
+Route::group(['prefix' => 'admin' , 'namespace' => 'Admin'], function () {
+    
+    Route::get('permiso', 'PermisoController@index')->name('permiso');
+    Route::get('permiso/crear', 'PermisoController@crear')->name('crear_permiso');
+
+});
+
+
+// ****************************
 
 // Debes colocar la ruta, luego hacia donde voy a 
 // invocar y cual es el metodo que voy a llamar 
