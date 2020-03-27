@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ValidacionMenu;
 use App\Models\Admin\Menu;
 
 class MenuController extends Controller
@@ -37,7 +38,7 @@ class MenuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function guardar(Request $request)
+    public function guardar(ValidacionMenu $request)
     {
         // dump and die (dd), muestra el contenido de
         // la variable y detiene la ejecucion del php.
@@ -47,6 +48,8 @@ class MenuController extends Controller
         // dd($_REQUEST); // solo muestre las variables del form
         
         Menu::create($request->all());
+
+        return redirect('admin/menu/crear')->with('mensaje', 'Menú creado con exito');
 
     }
 
@@ -82,6 +85,8 @@ class MenuController extends Controller
     public function actualizar(Request $request, $id)
     {
         //
+        return redirect('admin/menu')->with('mensaje', 'Menú actualizado con exito');
+
     }
 
     /**
