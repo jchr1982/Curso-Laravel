@@ -1,5 +1,6 @@
 Carpeta assets:
-Tiene 2 subcarpetas
+--------------
+Tiene 4 subcarpetas.
 
 Carpeta lte:
 -----------
@@ -9,4 +10,12 @@ tema seleccionado "AdminLTE"
 Carpeta css:
 -----------
 Aqui tambien va mi propio css "custom.css".
+
+Carpeta js:
+----------
+Aqui va nuestro codigo java script
+
+Carpeta pages/scripts/admin/menu:
+--------------------------------
+Aqui va el codigo java script especifico de los menus
 

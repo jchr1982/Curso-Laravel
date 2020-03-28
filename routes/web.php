@@ -21,6 +21,8 @@ Route::get('admin/menu/crear', 'Admin\MenuController@crear')->name('crear_menu')
 
 Route::post('admin/menu', 'Admin\MenuController@guardar')->name('guardar_menu');
 
+Route::post('admin/menu/guardar-orden', 'Admin\MenuController@guardarOrden')->name('guardar_orden');
+
 
 // ******************
 

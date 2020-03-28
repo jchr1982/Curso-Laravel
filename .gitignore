@@ -1,6 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
+/public/assets/js/jquery-validation
 /public/assets/lte
 /storage/*.key
 /vendor
