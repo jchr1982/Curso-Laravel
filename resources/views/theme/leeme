@@ -1,0 +1,30 @@
+Plantilla layout:
+----------------
+
+Esta plantilla es comun para todas las vistas de mi sistema.
+
+En ella, a traves de los @section voy a insertar otros elementos
+en esta plantilla base que son requeridas segun la parte del
+sistema en que se este trabajando.
+
+** Ejemplo:
+la vista index extiende la plantilla base layout con la siguiente
+instruccion:
+
+@extends("theme.$theme.layout")
+
+y luego podre insertar otros elementos segun se requieran de 
+esta manera:
+
+@section('titulo')
+    Roles
+@endsection
+
+En la plantilla base donde aparezca @yield ubicado en diferentes
+secciones de la misma se puede cambiar o incluir contenidos:
+
+<title>@yield('titulo', 'Biblioteca') | Tutorial Laravel</title>
+
+Aqui en titulo coloco Roles, si no cambiara esto, por defecto
+coloca Biblioteca.
+
