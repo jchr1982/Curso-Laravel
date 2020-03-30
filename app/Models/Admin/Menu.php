@@ -19,6 +19,20 @@ class Menu extends Model
     // a permitir modificarlos
     protected $guarded = ['id'];
 
+    /*
+    Nueva funcion para definir relaciones entre tablas:
+
+    Menu se relaciona con la tabla roles a traves de la
+    tabla puente menu_rol. Muchos menus pueden tener muchos
+    roles (relacion de muchos a muchos). Todos los roles que
+    pertenecen a esos menus que se encuentran en la tabla
+    menu_rol.
+    */
+    public function roles()
+    {
+        return $this->belongsToMany(Rol::class, 'menu_rol');
+    }
+
 
     // Nuevas funciones
     

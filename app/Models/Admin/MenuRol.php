@@ -14,4 +14,13 @@ class MenuRol extends Model
     // esta tabla no posee campos timestands
     public $timestands = false;
 
+    /*
+    La tabla menu_rol es una tabla puente que permite 
+    establecer una relacion de muchos a muchos entre
+    la tabla menu y la tabla rol.
+
+    El modelo es MenuRol
+    La tabla en la BD es menu_rol
+    */
+    
 }

@@ -33,6 +33,9 @@ Route::get('admin/rol/{id}/editar', 'Admin\RolController@editar')->name('editar_
 Route::put('admin/rol/{id}', 'Admin\RolController@actualizar')->name('actualizar_rol');
 Route::delete('admin/rol/{id}', 'Admin\RolController@eliminar')->name('eliminar_rol');
 
+/*RUTAS MENU-ROL*/
+Route::get('admin/menu-rol', 'Admin\MenuRolController@index')->name('menu_rol');
+Route::post('admin/menu-rol', 'Admin\MenuRolController@guardar')->name('guardar_menu_rol');
 
 // ******************
 
