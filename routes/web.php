@@ -14,6 +14,14 @@
 use App\Models\Admin\Permiso;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', 'InicioController@index')->name('inicio');
+
+Route::get('seguridad/login', 'Seguridad\LoginController@index')->name('login');
+Route::post('seguridad/login', 'Seguridad\LoginController@login')->name('login_post');
+Route::get('seguridad/logout', 'Seguridad\LoginController@logout')->name('logout');
+
+
+Route::get('admin', 'Admin\AdminController@index')->middleware(['auth', 'superadmin']);
 
 // Esta parte, es la nueva parte del "Menu", permite el cache
 
@@ -38,9 +46,6 @@ Route::get('admin/menu-rol', 'Admin\MenuRolController@index')->name('menu_rol');
 Route::post('admin/menu-rol', 'Admin\MenuRolController@guardar')->name('guardar_menu_rol');
 
 // ******************
-
-
-Route::get('/', 'InicioController@index');
 
 
 // Esta forma permite el cacheo:
