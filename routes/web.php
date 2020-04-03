@@ -31,6 +31,9 @@ Route::get('admin/menu/crear', 'Admin\MenuController@crear')->name('crear_menu')
 Route::post('admin/menu', 'Admin\MenuController@guardar')->name('guardar_menu');
 Route::post('admin/menu/guardar-orden', 'Admin\MenuController@guardarOrden')->name('guardar_orden');
 
+Route::get('admin/menu/{id}/editar', 'Admin\MenuController@editar')->name('editar_menu');
+Route::put('admin/menu/{id}', 'Admin\MenuController@actualizar')->name('actualizar_menu');
+Route::get('admin/menu/{id}/eliminar', 'Admin\MenuController@eliminar')->name('eliminar_menu');
 
 /*RUTAS ROL*/
 Route::get('admin/rol', 'Admin\RolController@index')->name('rol');
