@@ -54,11 +54,17 @@ Route::post('admin/menu-rol', 'Admin\MenuRolController@guardar')->name('guardar_
 // Esta forma permite el cacheo:
 // Route::get('admin/permiso', 'Admin\PermisoController@index')->name('permiso');
 
+/*RUTAS DE PERMISO*/
 // Esta otra forma, es mas facil de hacerlo, pero no permite el cacheo
 Route::group(['prefix' => 'admin' , 'namespace' => 'Admin'], function () {
     
-    Route::get('permiso', 'PermisoController@index')->name('permiso');
+    Route::get('permiso', 'PermisoController@index')->name('permiso1');
     Route::get('permiso/crear', 'PermisoController@crear')->name('crear_permiso');
+
+    Route::post('permiso', 'PermisoController@guardar')->name('guardar_permiso');
+    Route::get('permiso/{id}/editar', 'PermisoController@editar')->name('editar_permiso');
+    Route::put('permiso/{id}', 'PermisoController@actualizar')->name('actualizar_permiso');
+    Route::delete('permiso/{id}', 'PermisoController@eliminar')->name('eliminar_permiso');
 
 });
 
